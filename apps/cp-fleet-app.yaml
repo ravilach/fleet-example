@@ -1,0 +1,8 @@
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppDeploy
+metadata:
+  name: deploy-of-some-app
+spec:
+  forProvider:
+    app: cp-app-prod
+    image: "docker.io/shipasoftware/bulletinboard:1.0"
