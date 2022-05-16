@@ -5,7 +5,7 @@ metadata:
 spec:
   forProvider:
     app: fleetapp
-    image: "docker.io/shipasoftware/bulletinboard:1.0"
+    image: "docker.io/wordpress"
 
 # docker.io/wordpress
 # docker.io/shipasoftware/bulletinboard:1.0
