@@ -1,0 +1,33 @@
+pipeline:
+  name: some_repo
+  identifier: some_repo
+  projectIdentifier: gitx
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: some_stage
+        identifier: some_stage
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: false
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: <+input>
+              namespace: <+input>
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: Docker
+                  identifier: Docker
+                  spec:
+                    connectorRef: <+input>
+                    repo: <+input>
+                    tags:
+                      - nofar
